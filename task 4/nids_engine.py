@@ -3,6 +3,7 @@ import time
 import json
 from collections import defaultdict
 
+# manually npcap.exe -v= 1.8
 # Custom Detection Rules
 RULES = {
     "PORT_SCAN_THRESHOLD": 15,  # Alert if >15 ports hit in 10 seconds
@@ -12,7 +13,7 @@ RULES = {
 
 class NetworkIDS:
     def __init__(self):
-        self.connection_counts = defaultdict(int)
+        self.connection_counts = defaultdict(set)
         self.syn_counts = defaultdict(int)
         self.alerts = []
         self.start_time = time.time()

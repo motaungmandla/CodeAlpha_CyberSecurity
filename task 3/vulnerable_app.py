@@ -31,6 +31,6 @@ def profile():
     # BAD: Rendering user input directly into HTML
     html = f"<h1>Welcome to your profile, {name}!</h1>"
     return render_template_string(html)
-
+#127.0.0.1:62628
 if __name__ == '__main__':
-    app.run(debug=True) # VULNERABILITY 4: Debug mode in production
+    app.run(debug=True, port=9000) # VULNERABILITY 4: Debug mode in production
